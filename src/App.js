@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Todos } from "./Todos";
+import { AddTodo } from "./AddTodo";
 
 const App = () => {
   const [todos, setTodo] = useState([
@@ -31,10 +32,23 @@ const App = () => {
     // });
   };
 
+  const addTodo = (todo) => {
+    let todoid = Math.floor(Math.random() * 1000);
+    let newTodo = {
+      id: todoid,
+      content: todo,
+    };
+    // let newTodo = [...todos, todo];
+    setTodo((prevState) => {
+      return [...prevState, newTodo];
+    });
+  };
+
   return (
     <div className="todo-app container">
       <h1 className="center blue-text">Todos:</h1>
       <Todos todos={todos} deleteTodo={deleteTodo} />
+      <AddTodo addTodo={addTodo} />
     </div>
   );
 };
