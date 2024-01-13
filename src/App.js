@@ -21,15 +21,13 @@ const App = () => {
   ]);
 
   const deleteTodo = (id) => {
-    const newTodos = todos.filter((todo) => todo.id !== id);
-    setTodo(newTodos);
+    // const newTodos = todos.filter((todo) => todo.id !== id);
+    // setTodo(newTodos);
 
-    // const newTodos = todos.filter((todo) => {
-    //   return todo.id !== id;
-    // });
-    // setTodo({
-    //   todos: newTodos,
-    // });
+    const newTodos = todos.filter((todo) => {
+      return todo.id !== id;
+    });
+    setTodo(newTodos);
   };
 
   const addTodo = (todo) => {
@@ -38,7 +36,6 @@ const App = () => {
       id: todoid,
       content: todo,
     };
-    // let newTodo = [...todos, todo];
     setTodo((prevState) => {
       return [...prevState, newTodo];
     });
