@@ -20,9 +20,5 @@ export const Todos = ({ todos, deleteTodo }) => {
     <p className="center">There is no todo yet</p>
   );
 
-  return (
-    <div>
-      <div className="todo collection">{todoLists}</div>
-    </div>
-  );
+  return <div className="todo collection">{todoLists}</div>;
 };
